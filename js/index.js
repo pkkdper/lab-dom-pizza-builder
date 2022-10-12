@@ -96,29 +96,50 @@ document
     state.pepperoni = !state.pepperoni;
     renderEverything();
   });
-document.querySelector('.btn.btn-mushrooms')
-.addEventListener('click', function () {
-  state.mushroom = !state.mushroom;
+document
+  .querySelector('.btn.btn-mushrooms')
+  .addEventListener('click', function () {
+    state.mushroom = !state.mushroom;
+    renderEverything();
+  });
+
+document
+  .querySelector('.btn.btn-green-peppers')
+  .addEventListener('click', function () {
+    state.greenPepper = !state.greenPepper;
+    renderEverything();
+  });
+
+document.querySelector('.btn.btn-sauce').addEventListener('click', function () {
+  state.whiteSauce = !state.whiteSauce;
   renderEverything();
 });
 
-document.querySelector('.btn.btn-green-peppers').addEventListener('click', function() {
-  state.greenPepper = !state.greenPepper;
-  renderEverything();
-});
-
-document.querySelector('.btn.btn-sauce').addEventListener('click', function() {
-  state.whiteSauce =!state.whiteSauce;
-  renderEverything();
-});
-
-document.querySelector('.btn.btn-crust').addEventListener('click', function() {
-  state.glutenFreeCrust =!state.glutenFreeCrust;
+document.querySelector('.btn.btn-crust').addEventListener('click', function () {
+  state.glutenFreeCrust = !state.glutenFreeCrust;
   renderEverything();
 });
 
 function renderButtons() {
-  // Iteration 3: add/remove the class "active" of each `<button class="btn">`
+  // let button = function() {}
+  let buttonClass = document.querySelector('.btn');
+  console.log(buttonClass);
+
+  // if(buttonClass.className = "active") {buttonClass.classList.remove('active')
+  // }
+  // for (const i in state) {
+  //   console.log(`${i}`);} // Iteration 3: add/remove the class "active" of each `<button class="btn">`
+
+  /*
+  check if it's in use if yes then active if not then not active!!!!
+  */
+  document.querySelector('.btn').addEventListener('click', function () {
+    if (!state) {
+      return document.querySelector('.btn')[0].remove.classList('active');
+    } else if (state) {
+      return document.querySelector('.btn')[0].add.classList('active');
+    }
+  });
 }
 
 function renderPrice() {
